@@ -180,7 +180,7 @@ const categorias = [
     itens: [
       {
         id: 25,
-        nome: "Varal de chão pra salvar os dias de chuva",
+        nome: "Varal compacto pra vida de apartamento",
         preco: 82.90,
         imagem: "varaldechao.jpg"
       },
