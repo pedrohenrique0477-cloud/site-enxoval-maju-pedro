@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maju & Pedro | Lista de Enxoval</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" 
+    rel="stylesheet"
+  >
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <header class="topo">
+    <a href="#" class="logo" onclick="mostrarPagina('inicio')">M & P</a>
+
+    <nav class="menu">
+      <button onclick="mostrarPagina('presentes')">Presentes</button>
+
+      <button class="botao-carrinho" onclick="mostrarPagina('carrinho')" aria-label="Abrir carrinho">
+        <i data-lucide="shopping-bag"></i>
+        <span id="contadorCarrinho">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- INÍCIO -->
+    <section id="pagina-inicio" class="pagina ativa">
+
+      <section class="hero">
+        <div class="hero-card">
+          <img src="./img/majuepedro.png" alt="Maju e Pedro" class="foto-casal">
+
+          <div class="hero-texto">
+            <h1>Maju & Pedro</h1>
+            <p>10.10.2026</p>
+          </div>
+
+          <span class="brilho brilho-1">✦</span>
+          <span class="brilho brilho-2">✧</span>
+        </div>
+      </section>
+
+      <section class="contador-area">
+        <p class="subtitulo">Faltam</p>
+
+        <div class="contador">
+          <div class="contador-box">
+            <strong id="dias">00</strong>
+            <span>Dias</span>
+          </div>
+
+          <div class="contador-box">
+            <strong id="horas">00</strong>
+            <span>Horas</span>
+          </div>
+
+          <div class="contador-box">
+            <strong id="minutos">00</strong>
+            <span>Minutos</span>
+          </div>
+
+          <div class="contador-box">
+            <strong id="segundos">00</strong>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="boas-vindas">
+        <h2>Sejam bem-vindos ao nosso site!</h2>
+
+        <p>
+          Estamos montando o nosso primeiro lar e adoraríamos a sua ajuda.
+          Escolha um presentinho da nossa lista de enxoval — cada item é uma
+          peça da nossa nova história juntos. 💗
+        </p>
+
+        <button class="botao-principal" onclick="mostrarPagina('presentes')">
+          Ver lista de presentes
+        </button>
+      </section>
+
+    </section>
+
+
+    <!-- PRESENTES -->
+    <section id="pagina-presentes" class="pagina">
+
+      <section class="titulo-pagina">
+        <p class="subtitulo">Nossa lista</p>
+        <h2>Lista de presentes virtuais</h2>
+        <div class="linha"></div>
+      </section>
+
+      <section id="listaPresentes" class="lista-presentes"></section>
+
+      <div class="centro">
+        <button class="botao-secundario" onclick="mostrarPagina('carrinho')">
+          Ir para o carrinho
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- CARRINHO -->
+    <section id="pagina-carrinho" class="pagina">
+
+      <section class="checkout-container">
+
+        <div class="checkout-topo">
+          <h2>M & P</h2>
+          <i data-lucide="lock"></i>
+        </div>
+
+        <div class="checkout-card">
+
+          <div class="linha-tabela">
+            <strong>Descrição</strong>
+            <strong>Quantidade</strong>
+          </div>
+
+          <div id="itensCarrinho"></div>
+
+          <div class="resumo-valores">
+            <div>
+              <span>Valor</span>
+              <strong id="valorCarrinho">R$ 0,00</strong>
+            </div>
+
+            <div>
+              <span>Total</span>
+              <strong id="totalCarrinho">R$ 0,00</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="botao-principal cheio" onclick="irParaRevisao()">
+          Próximo passo
+        </button>
+
+        <button class="botao-outline cheio" onclick="mostrarPagina('presentes')">
+          Adicionar presentes
+        </button>
+
+        <a class="botao-outline cheio link-whatsapp" href="https://wa.me/5516994507580" target="_blank">
+          Compartilhar no WhatsApp
+          <i data-lucide="message-circle"></i>
+        </a>
+
+      </section>
+
+    </section>
+
+
+    <!-- REVISÃO -->
+    <section id="pagina-revisao" class="pagina">
+
+      <section class="checkout-container">
+
+        <div class="checkout-topo">
+          <h2>M & P</h2>
+          <i data-lucide="lock"></i>
+        </div>
+
+        <div class="checkout-card">
+
+          <div class="linha-tabela">
+            <strong>Descrição</strong>
+            <strong>Valor</strong>
+          </div>
+
+          <div class="revisao-linha">
+            <span>Presente(s)</span>
+            <strong id="valorRevisao">R$ 0,00</strong>
+          </div>
+
+          <div id="resumoRevisao" class="resumo-revisao"></div>
+
+          <div class="resumo-valores revisao-total">
+            <div>
+              <span>Total</span>
+              <strong id="totalRevisao">R$ 0,00</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="botao-principal cheio" onclick="irParaPagamento()">
+          Próximo passo
+        </button>
+
+        <button class="botao-outline cheio" onclick="mostrarPagina('carrinho')">
+          Voltar para o carrinho
+        </button>
+
+      </section>
+
+    </section>
+
+
+    <!-- PAGAMENTO -->
+    <section id="pagina-pagamento" class="pagina">
+
+      <section class="checkout-container">
+
+        <div class="checkout-topo">
+          <h2>M & P</h2>
+          <i data-lucide="lock"></i>
+        </div>
+
+        <div class="checkout-card">
+
+          <p class="texto-pagamento">Escolha a forma de pagamento</p>
+
+          <div class="opcao-pagamento ativa" onclick="selecionarPagamento('pix')">
+            <div>
+              <input type="radio" name="pagamento" checked>
+              <strong>Pix</strong>
+            </div>
+            <i data-lucide="badge-dollar-sign"></i>
+          </div>
+
+          <div class="opcao-pagamento" onclick="selecionarPagamento('cartao')">
+            <div>
+              <input type="radio" name="pagamento">
+              <strong>Cartão de crédito</strong>
+            </div>
+            <i data-lucide="credit-card"></i>
+          </div>
+
+          <div class="pagamento-detalhes">
+
+            <p class="subtitulo">Pagamento · <span id="formaSelecionada">Pix</span></p>
+
+            <p id="textoInstrucaoPagamento">Faça o Pix no valor de</p>
+
+            <strong class="valor-final" id="valorPagamento">R$ 0,00</strong>
+
+            <div id="areaPix" class="area-pix">
+              <div>
+                <span>Chave Pix</span>
+                <strong id="chavePix">16994507580</strong>
+
+                <span class="nome-pix-label">Nome</span>
+                <strong id="nomeRecebedor">Pedro Henrique Casalli</strong>
+              </div>
+
+              <button onclick="copiarPix()">Copiar</button>
+            </div>
+
+            <div id="areaCartao" class="area-link-pagamento escondido">
+              <p>
+                Você será direcionado para o Mercado Pago.
+                Digite lá o mesmo valor total mostrado aqui.
+              </p>
+
+              <a 
+                id="linkCartao" 
+                href="https://link.mercadopago.com.br/presentemajuepedro" 
+                target="_blank" 
+                class="botao-mini"
+                onclick="abrirMercadoPago(event)"
+              >
+                Pagar com cartão pelo Mercado Pago
+              </a>
+            </div>
+
+            <p class="mercado-pago">
+              Dica: no cartão, informe no Mercado Pago o valor exato que aparece aqui.
+            </p>
+
+          </div>
+
+        </div>
+
+        <button class="botao-principal cheio" onclick="finalizarCompra()">
+          Finalizar compra
+        </button>
+
+        <button class="botao-outline cheio" onclick="mostrarPagina('revisao')">
+          Voltar uma etapa
+        </button>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Feito com carinho para Maju & Pedro · 2026
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
