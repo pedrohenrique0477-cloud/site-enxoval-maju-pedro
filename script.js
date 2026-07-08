@@ -63,13 +63,13 @@ const categorias = [
     itens: [
       {
         id: 8,
-        nome: "Tapete de entrada pra receber bem",
+        nome: "Tapete de entrada pra te receber bem",
         preco: 48.90,
         imagem: "tapeteentrada.jpg"
       },
       {
         id: 9,
-        nome: "Porta-retrato pra foto do nosso primeiro rolê",
+        nome: "Porta-retrato pra foto do nosso enxoval",
         preco: 44.90,
         imagem: "portaretrato.jpg"
       },
