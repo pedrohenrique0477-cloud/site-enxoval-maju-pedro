@@ -592,6 +592,43 @@ function finalizarCompra() {
 
   const total = calcularTotal();
 
+  let forma = "Pix";
+
+  if (formaPagamento === "cartao") {
+    forma = "Cartão de crédito pelo Mercado Pago";
+  }
+
+  alert(
+    `Compra finalizada!\n\n` +
+    `Total: ${formatarMoeda(total)}\n` +
+    `Forma de pagamento escolhida: ${forma}\n\n` +
+    `Obrigado pelo carinho com o nosso Chá de Casa Nova!`
+  );
+
+  if (formaPagamento === "cartao") {
+    const abrirPagamento = confirm(
+      `Você escolheu cartão de crédito.\n\n` +
+      `No Mercado Pago, digite exatamente o valor: ${formatarMoeda(total)}.\n\n` +
+      `Deseja abrir o Mercado Pago agora?`
+    );
+
+    if (abrirPagamento) {
+      window.open(LINK_CARTAO_MERCADO_PAGO, "_blank");
+    }
+  }
+
+  const querEnviarMensagem = confirm(
+    "Deseja enviar uma mensagem para Maju e Pedro avisando sobre o presente?"
+  );
+
+  if (querEnviarMensagem) {
+    enviarMensagemCompra();
+  }
+}
+
+function enviarMensagemCompra() {
+  const total = calcularTotal();
+
   const listaItens = carrinho.map(item => {
     return `${item.quantidade}x ${item.nome} - ${formatarMoeda(item.preco * item.quantidade)}`;
   }).join("%0A");
@@ -604,20 +641,13 @@ function finalizarCompra() {
 
   const mensagem =
     `Oi, Maju e Pedro!%0A%0A` +
-    `Escolhi um presentinho da lista de enxoval:%0A%0A` +
+    `Escolhi um presentinho do Chá de Casa Nova:%0A%0A` +
     `${listaItens}%0A%0A` +
     `Total: ${formatarMoeda(total)}%0A` +
     `Forma de pagamento escolhida: ${forma}%0A%0A` +
-    `Vou finalizar o pagamento agora.`;
+    `Finalizei pelo site.`;
 
   window.open(`${WHATSAPP}?text=${mensagem}`, "_blank");
-
-  if (formaPagamento === "cartao") {
-    setTimeout(() => {
-      alert(`Depois de enviar a mensagem, digite no Mercado Pago o valor: ${formatarMoeda(total)}`);
-      window.open(LINK_CARTAO_MERCADO_PAGO, "_blank");
-    }, 900);
-  }
 }
 
 function calcularTotal() {
