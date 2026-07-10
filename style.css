@@ -106,16 +106,17 @@ button {
 
 .hero {
   background: var(--fundo);
-  min-height: 640px;
+  min-height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 22px 0;
 }
 
 .hero-card {
-  width: 420px;
-  max-width: 100%;
-  height: 640px;
+  width: 360px;
+  max-width: 92%;
+  height: 500px;
   position: relative;
   display: flex;
   align-items: center;
@@ -149,14 +150,14 @@ button {
 
 .hero-texto {
   position: absolute;
-  bottom: 54px;
+  bottom: 34px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   color: var(--verde);
   width: 86%;
-  padding: 18px 14px 16px;
-  background: rgba(248, 242, 208, 0.86);
+  padding: 14px 12px 13px;
+  background: rgba(248, 242, 208, 0.88);
   border: 1px solid rgba(86, 101, 20, 0.22);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   backdrop-filter: blur(3px);
@@ -164,7 +165,7 @@ button {
 
 .hero-texto h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 400;
   font-style: italic;
   line-height: 1;
@@ -726,18 +727,18 @@ footer {
   }
 
   .hero-card {
-    width: 100%;
+    width: 92%;
     height: 520px;
   }
 
   .hero-texto {
-  bottom: 42px;
+  bottom: 30px;
   width: 88%;
-  padding: 14px 10px 13px;
+  padding: 12px 10px;
 }
 
 .hero-texto h1 {
-  font-size: 38px;
+  font-size: 34px;
 }
 
   .contador {
