@@ -145,7 +145,7 @@ const categorias = [
     itens: [
       {
         id: 20,
-        nome: "Kit de toalhas macias para o nosso novo lar",
+        nome: "Kit de toalhas para deixar o banheiro mais aconchegante",
         preco: 87.90,
         imagem: "kittoalhas.jpg"
       },

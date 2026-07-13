@@ -1,15 +1,17 @@
 :root {
-  --fundo: #f8f2d0;
-  --fundo-card: #eee8b4;
-
   --camel: #B2967D;
-  --camel-escuro: #7f634e;
-  --camel-claro: #d8c3ad;
-  --camel-suave: #eadccf;
+  --camel-escuro: #6f5747;
+  --camel-medio: #c7ad96;
+  --camel-claro: #e3d1bf;
+  --camel-suave: #f2e6dc;
+
+  --fundo: #B2967D;
+  --fundo-claro: #f5eadf;
+  --fundo-card: #d8c3ad;
 
   --texto: #241b15;
-  --linha: rgba(178, 150, 125, 0.36);
-  --branco: #fffdf2;
+  --linha: rgba(111, 87, 71, 0.32);
+  --branco: #fffaf3;
 }
 
 * {
@@ -19,7 +21,7 @@
 }
 
 body {
-  background: var(--fundo);
+  background: var(--camel);
   color: var(--texto);
   font-family: 'Montserrat', sans-serif;
 }
@@ -37,8 +39,8 @@ button {
   width: 100%;
   height: 62px;
   padding: 0 28px;
-  background: rgba(248, 242, 208, 0.94);
-  border-bottom: 1px solid var(--linha);
+  background: var(--camel);
+  border-bottom: 1px solid rgba(111, 87, 71, 0.35);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,14 +48,13 @@ button {
   top: 0;
   left: 0;
   z-index: 50;
-  backdrop-filter: blur(8px);
 }
 
 .logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   letter-spacing: 6px;
-  color: var(--texto);
+  color: var(--branco);
   text-decoration: none;
 }
 
@@ -66,7 +67,7 @@ button {
 .menu button {
   border: none;
   background: transparent;
-  color: var(--texto);
+  color: var(--branco);
   font-size: 14px;
 }
 
@@ -81,12 +82,13 @@ button {
 .botao-carrinho svg {
   width: 22px;
   height: 22px;
+  color: var(--branco);
 }
 
 #contadorCarrinho {
   min-width: 18px;
   height: 18px;
-  background: var(--camel);
+  background: var(--camel-escuro);
   color: white;
   border-radius: 50%;
   font-size: 11px;
@@ -102,6 +104,7 @@ button {
   display: none;
   padding-top: 62px;
   min-height: 100vh;
+  background: var(--camel);
 }
 
 .pagina.ativa {
@@ -110,33 +113,37 @@ button {
 
 /* HERO */
 .hero {
-  background: var(--fundo);
-  min-height: 400px;
+  background: var(--camel);
+  min-height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 18px 0;
+  padding: 34px 18px 26px;
 }
 
 .hero-card {
-  width: 300px;
-  max-width: 90%;
-  height: 380px;
+  width: 390px;
+  max-width: 92vw;
+  min-height: 430px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--fundo);
-  border: 1px solid rgba(178, 150, 125, 0.28);
-  box-shadow: 0 10px 30px rgba(127, 99, 78, 0.18);
+
+  background: var(--camel);
+  border: 1px solid rgba(255, 250, 243, 0.35);
+  box-shadow: 0 14px 34px rgba(75, 55, 42, 0.22);
 }
 
 .foto-casal {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+  object-position: center center;
   display: block;
+  background: var(--camel);
 }
 
 /* plaquinha em cima da foto */
@@ -146,18 +153,19 @@ button {
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: var(--camel-escuro);
+
   width: 84%;
-  padding: 10px 10px 11px;
-  background: rgba(248, 242, 208, 0.92);
-  border: 1px solid rgba(178, 150, 125, 0.42);
-  box-shadow: 0 6px 18px rgba(127, 99, 78, 0.22);
+  padding: 12px 12px 13px;
+
+  background: rgba(242, 230, 220, 0.94);
+  border: 1px solid rgba(111, 87, 71, 0.28);
+  box-shadow: 0 7px 20px rgba(75, 55, 42, 0.20);
   backdrop-filter: blur(3px);
 }
 
 .hero-texto h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
+  font-size: 34px;
   font-weight: 500;
   font-style: italic;
   line-height: 1;
@@ -170,7 +178,7 @@ button {
   display: inline-block;
   margin-top: 8px;
   background: var(--camel);
-  color: #fff8df;
+  color: var(--branco);
   padding: 7px 22px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 14px;
@@ -180,8 +188,8 @@ button {
 
 .brilho {
   position: absolute;
-  color: rgba(255, 248, 223, 0.9);
-  text-shadow: 0 2px 10px rgba(127, 99, 78, 0.25);
+  color: rgba(255, 250, 243, 0.88);
+  text-shadow: 0 2px 10px rgba(75, 55, 42, 0.22);
   animation: piscar 2.2s infinite ease-in-out;
 }
 
@@ -203,6 +211,7 @@ button {
     opacity: 0.25;
     transform: scale(0.8);
   }
+
   50% {
     opacity: 1;
     transform: scale(1);
@@ -211,15 +220,16 @@ button {
 
 /* CONTADOR */
 .contador-area {
-  padding: 60px 20px 45px;
+  padding: 64px 20px 45px;
   text-align: center;
+  background: var(--camel);
 }
 
 .subtitulo {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 11px;
-  color: var(--camel-escuro);
+  color: var(--branco);
   font-weight: 500;
 }
 
@@ -236,8 +246,8 @@ button {
   height: 86px;
   align-items: center;
   justify-content: center;
-  background: var(--camel);
-  color: white;
+  background: var(--camel-escuro);
+  color: var(--branco);
   font-family: 'Cormorant Garamond', serif;
   font-size: 31px;
   font-weight: 500;
@@ -249,7 +259,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 11px;
-  color: var(--camel-escuro);
+  color: var(--branco);
 }
 
 /* BOAS VINDAS */
@@ -258,6 +268,7 @@ button {
   padding: 30px 20px 80px;
   margin: 0 auto;
   text-align: center;
+  background: var(--camel);
 }
 
 .boas-vindas h2,
@@ -271,13 +282,14 @@ button {
 .boas-vindas h2 {
   font-size: 36px;
   margin-bottom: 22px;
-  color: var(--texto);
+  color: var(--branco);
 }
 
 .boas-vindas p {
   line-height: 1.8;
   font-size: 15px;
   margin-bottom: 34px;
+  color: var(--branco);
 }
 
 /* BOTÕES */
@@ -285,9 +297,9 @@ button {
 .botao-secundario,
 .botao-outline,
 .botao-mini {
-  border: 1px solid var(--camel);
-  background: var(--camel);
-  color: white;
+  border: 1px solid var(--camel-escuro);
+  background: var(--camel-escuro);
+  color: var(--branco);
   padding: 17px 42px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
@@ -299,18 +311,19 @@ button {
 .botao-principal:hover,
 .botao-secundario:hover,
 .botao-mini:hover {
-  background: var(--camel-escuro);
-  border-color: var(--camel-escuro);
+  background: #5e493b;
+  border-color: #5e493b;
   transform: translateY(-2px);
 }
 
 .botao-outline {
   background: transparent;
-  color: var(--camel-escuro);
+  color: var(--branco);
+  border-color: rgba(255, 250, 243, 0.75);
 }
 
 .botao-outline:hover {
-  background: rgba(178, 150, 125, 0.12);
+  background: rgba(255, 250, 243, 0.14);
 }
 
 .cheio {
@@ -325,23 +338,26 @@ button {
 .titulo-pagina {
   text-align: center;
   padding: 70px 20px 30px;
+  background: var(--camel);
 }
 
 .titulo-pagina h2 {
   font-size: 42px;
   margin-top: 18px;
+  color: var(--branco);
 }
 
 .linha {
   width: 170px;
   height: 1px;
-  background: var(--linha);
+  background: rgba(255, 250, 243, 0.45);
   margin: 28px auto 0;
 }
 
 .lista-presentes {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
+  background: var(--camel);
 }
 
 .categoria {
@@ -352,7 +368,7 @@ button {
   font-size: 36px;
   text-align: center;
   margin-bottom: 36px;
-  color: var(--texto);
+  color: var(--branco);
 }
 
 .grid-presentes {
@@ -362,20 +378,21 @@ button {
 }
 
 .card-presente {
-  background: var(--fundo-card);
+  background: var(--camel-claro);
   padding: 26px;
   text-align: center;
   min-height: 520px;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(178, 150, 125, 0.22);
+  border: 1px solid rgba(255, 250, 243, 0.28);
+  box-shadow: 0 8px 22px rgba(75, 55, 42, 0.12);
 }
 
 .card-presente img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  background: #f7f1cf;
+  background: var(--camel-suave);
   margin-bottom: 25px;
 }
 
@@ -384,6 +401,7 @@ button {
   line-height: 1.45;
   font-weight: 500;
   min-height: 48px;
+  color: var(--texto);
 }
 
 .preco {
@@ -397,8 +415,8 @@ button {
   width: 165px;
   margin: auto auto 0;
   border: none;
-  background: var(--camel);
-  color: white;
+  background: var(--camel-escuro);
+  color: var(--branco);
   padding: 15px 20px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
@@ -406,13 +424,14 @@ button {
 }
 
 .card-presente button:hover {
-  background: var(--camel-escuro);
+  background: #5e493b;
   transform: translateY(-2px);
 }
 
 .centro {
   text-align: center;
   padding: 70px 20px 90px;
+  background: var(--camel);
 }
 
 /* CHECKOUT */
@@ -426,23 +445,24 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 0 6px 22px;
-  border-bottom: 1px solid var(--linha);
+  border-bottom: 1px solid rgba(255, 250, 243, 0.42);
   margin-bottom: 20px;
 }
 
 .checkout-topo h2 {
   font-size: 30px;
   letter-spacing: 2px;
+  color: var(--branco);
 }
 
 .checkout-topo svg {
-  color: var(--camel);
+  color: var(--branco);
 }
 
 .checkout-card {
-  background: var(--fundo-card);
+  background: var(--camel-claro);
   padding: 28px;
-  border: 1px solid rgba(178, 150, 125, 0.22);
+  border: 1px solid rgba(255, 250, 243, 0.28);
 }
 
 .linha-tabela {
@@ -585,8 +605,8 @@ button {
 }
 
 .opcao-pagamento.ativa {
-  border-color: var(--camel);
-  background: rgba(178, 150, 125, 0.12);
+  border-color: var(--camel-escuro);
+  background: rgba(255, 250, 243, 0.20);
 }
 
 .opcao-pagamento div {
@@ -596,11 +616,11 @@ button {
 }
 
 .opcao-pagamento input {
-  accent-color: var(--camel);
+  accent-color: var(--camel-escuro);
 }
 
 .opcao-pagamento svg {
-  color: var(--camel);
+  color: var(--camel-escuro);
 }
 
 .pagamento-detalhes {
@@ -612,6 +632,7 @@ button {
 
 .pagamento-detalhes .subtitulo {
   margin-bottom: 16px;
+  color: var(--camel-escuro);
 }
 
 .valor-final {
@@ -630,7 +651,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 110px;
   text-align: left;
-  background: rgba(255,255,255,0.28);
+  background: rgba(255, 250, 243, 0.24);
 }
 
 .area-pix div {
@@ -651,13 +672,13 @@ button {
 
 .area-pix button {
   border: none;
-  background: var(--camel);
-  color: white;
+  background: var(--camel-escuro);
+  color: var(--branco);
   font-weight: 600;
 }
 
 .area-pix button:hover {
-  background: var(--camel-escuro);
+  background: #5e493b;
 }
 
 .nome-pix-label {
@@ -692,11 +713,12 @@ button {
 }
 
 footer {
-  border-top: 1px solid var(--linha);
+  border-top: 1px solid rgba(255, 250, 243, 0.42);
   text-align: center;
   padding: 28px 20px;
   font-size: 12px;
-  color: var(--camel-escuro);
+  color: var(--branco);
+  background: var(--camel);
 }
 
 /* RESPONSIVO */
@@ -709,12 +731,8 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .hero {
-    min-height: 380px;
-  }
-
   .hero-card {
-    height: 360px;
+    width: 370px;
   }
 }
 
@@ -729,23 +747,30 @@ footer {
   }
 
   .hero {
-    min-height: 360px;
-    padding: 16px 0;
+    padding: 28px 14px 18px;
   }
 
   .hero-card {
-    width: 86%;
-    height: 350px;
+    width: 92vw;
+    min-height: auto;
+  }
+
+  .foto-casal {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    object-position: center center;
   }
 
   .hero-texto {
-    bottom: 20px;
-    width: 86%;
-    padding: 9px 8px;
+    bottom: 18px;
+    width: 84%;
+    padding: 10px 8px;
   }
 
   .hero-texto h1 {
-    font-size: 28px;
+    font-size: 30px;
   }
 
   .hero-texto p {
