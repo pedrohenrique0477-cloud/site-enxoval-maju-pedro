@@ -563,8 +563,18 @@ function selecionarPagamento(tipo) {
 
 function copiarPix() {
   navigator.clipboard.writeText(CHAVE_PIX)
-    .then(() => alert("Chave Pix copiada!"))
-    .catch(() => alert("Não foi possível copiar. Copie manualmente."));
+    .then(() => {
+      alert(
+        "Chave Pix copiada!\n\n" +
+        "Agora vá até o aplicativo do seu banco, escolha a opção Pix, cole a chave e faça o pagamento no valor mostrado aqui."
+      );
+    })
+    .catch(() => {
+      alert(
+        "Não foi possível copiar automaticamente.\n\n" +
+        "Copie a chave Pix manualmente e vá até o aplicativo do seu banco para fazer o pagamento."
+      );
+    });
 }
 
 function abrirMercadoPago(event) {
