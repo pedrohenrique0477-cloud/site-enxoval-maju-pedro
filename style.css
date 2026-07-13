@@ -1,10 +1,14 @@
 :root {
   --fundo: #f8f2d0;
   --fundo-card: #eee8b4;
-  --verde: #292e12;
-  --verde-claro: #f8f2d0;
-  --texto: #16140c;
-  --linha: rgba(86, 101, 20, 0.25);
+
+  --camel: #B2967D;
+  --camel-escuro: #7f634e;
+  --camel-claro: #d8c3ad;
+  --camel-suave: #eadccf;
+
+  --texto: #241b15;
+  --linha: rgba(178, 150, 125, 0.36);
   --branco: #fffdf2;
 }
 
@@ -33,7 +37,7 @@ button {
   width: 100%;
   height: 62px;
   padding: 0 28px;
-  background: rgba(248, 242, 208, 0.92);
+  background: rgba(248, 242, 208, 0.94);
   border-bottom: 1px solid var(--linha);
   display: flex;
   align-items: center;
@@ -82,7 +86,7 @@ button {
 #contadorCarrinho {
   min-width: 18px;
   height: 18px;
-  background: var(--verde);
+  background: var(--camel);
   color: white;
   border-radius: 50%;
   font-size: 11px;
@@ -104,6 +108,7 @@ button {
   display: block;
 }
 
+/* HERO */
 .hero {
   background: var(--fundo);
   min-height: 400px;
@@ -123,53 +128,40 @@ button {
   justify-content: center;
   overflow: hidden;
   background: var(--fundo);
+  border: 1px solid rgba(178, 150, 125, 0.28);
+  box-shadow: 0 10px 30px rgba(127, 99, 78, 0.18);
 }
 
 .foto-casal {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
-/* Caso a imagem tenha fundo transparente ou demore carregar */
-.hero-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: 0;
-}
-
-.hero-card img,
-.hero-texto,
-.brilho {
-  position: relative;
-  z-index: 1;
-}
-
+/* plaquinha em cima da foto */
 .hero-texto {
   position: absolute;
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  color: var(--verde);
+  color: var(--camel-escuro);
   width: 84%;
   padding: 10px 10px 11px;
-  background: rgba(248, 242, 208, 0.9);
-  border: 1px solid rgba(86, 101, 20, 0.22);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  background: rgba(248, 242, 208, 0.92);
+  border: 1px solid rgba(178, 150, 125, 0.42);
+  box-shadow: 0 6px 18px rgba(127, 99, 78, 0.22);
   backdrop-filter: blur(3px);
 }
 
 .hero-texto h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
-  font-weight: 400;
+  font-weight: 500;
   font-style: italic;
   line-height: 1;
-  color: var(--verde);
+  color: var(--camel-escuro);
   text-shadow: none;
   white-space: nowrap;
 }
@@ -177,7 +169,7 @@ button {
 .hero-texto p {
   display: inline-block;
   margin-top: 8px;
-  background: var(--verde);
+  background: var(--camel);
   color: #fff8df;
   padding: 7px 22px;
   font-family: 'Cormorant Garamond', serif;
@@ -188,20 +180,21 @@ button {
 
 .brilho {
   position: absolute;
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 248, 223, 0.9);
+  text-shadow: 0 2px 10px rgba(127, 99, 78, 0.25);
   animation: piscar 2.2s infinite ease-in-out;
 }
 
 .brilho-1 {
-  right: 46px;
-  bottom: 70px;
-  font-size: 34px;
+  right: 26px;
+  bottom: 44px;
+  font-size: 26px;
 }
 
 .brilho-2 {
-  left: 60px;
-  top: 140px;
-  font-size: 24px;
+  left: 34px;
+  top: 86px;
+  font-size: 20px;
   animation-delay: 0.8s;
 }
 
@@ -216,8 +209,9 @@ button {
   }
 }
 
+/* CONTADOR */
 .contador-area {
-  padding: 70px 20px 45px;
+  padding: 60px 20px 45px;
   text-align: center;
 }
 
@@ -225,7 +219,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 8px;
   font-size: 11px;
-  color: var(--verde);
+  color: var(--camel-escuro);
   font-weight: 500;
 }
 
@@ -242,7 +236,7 @@ button {
   height: 86px;
   align-items: center;
   justify-content: center;
-  background: var(--verde);
+  background: var(--camel);
   color: white;
   font-family: 'Cormorant Garamond', serif;
   font-size: 31px;
@@ -255,9 +249,10 @@ button {
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 11px;
-  color: var(--verde);
+  color: var(--camel-escuro);
 }
 
+/* BOAS VINDAS */
 .boas-vindas {
   max-width: 720px;
   padding: 30px 20px 80px;
@@ -276,6 +271,7 @@ button {
 .boas-vindas h2 {
   font-size: 36px;
   margin-bottom: 22px;
+  color: var(--texto);
 }
 
 .boas-vindas p {
@@ -284,12 +280,13 @@ button {
   margin-bottom: 34px;
 }
 
+/* BOTÕES */
 .botao-principal,
 .botao-secundario,
 .botao-outline,
 .botao-mini {
-  border: 1px solid var(--verde);
-  background: var(--verde);
+  border: 1px solid var(--camel);
+  background: var(--camel);
   color: white;
   padding: 17px 42px;
   font-family: 'Cormorant Garamond', serif;
@@ -302,17 +299,18 @@ button {
 .botao-principal:hover,
 .botao-secundario:hover,
 .botao-mini:hover {
-  filter: brightness(1.12);
+  background: var(--camel-escuro);
+  border-color: var(--camel-escuro);
   transform: translateY(-2px);
 }
 
 .botao-outline {
   background: transparent;
-  color: var(--verde);
+  color: var(--camel-escuro);
 }
 
 .botao-outline:hover {
-  background: rgba(86, 101, 20, 0.08);
+  background: rgba(178, 150, 125, 0.12);
 }
 
 .cheio {
@@ -323,6 +321,7 @@ button {
   margin-top: 14px;
 }
 
+/* LISTA DE PRESENTES */
 .titulo-pagina {
   text-align: center;
   padding: 70px 20px 30px;
@@ -353,6 +352,7 @@ button {
   font-size: 36px;
   text-align: center;
   margin-bottom: 36px;
+  color: var(--texto);
 }
 
 .grid-presentes {
@@ -368,6 +368,7 @@ button {
   min-height: 520px;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(178, 150, 125, 0.22);
 }
 
 .card-presente img {
@@ -389,13 +390,14 @@ button {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
   margin: 30px 0 24px;
+  color: var(--texto);
 }
 
 .card-presente button {
   width: 165px;
   margin: auto auto 0;
   border: none;
-  background: var(--verde);
+  background: var(--camel);
   color: white;
   padding: 15px 20px;
   font-family: 'Cormorant Garamond', serif;
@@ -404,7 +406,7 @@ button {
 }
 
 .card-presente button:hover {
-  filter: brightness(1.12);
+  background: var(--camel-escuro);
   transform: translateY(-2px);
 }
 
@@ -413,6 +415,7 @@ button {
   padding: 70px 20px 90px;
 }
 
+/* CHECKOUT */
 .checkout-container {
   width: min(860px, calc(100% - 36px));
   margin: 42px auto 100px;
@@ -433,12 +436,13 @@ button {
 }
 
 .checkout-topo svg {
-  color: var(--verde);
+  color: var(--camel);
 }
 
 .checkout-card {
   background: var(--fundo-card);
   padding: 28px;
+  border: 1px solid rgba(178, 150, 125, 0.22);
 }
 
 .linha-tabela {
@@ -490,7 +494,7 @@ button {
   border: 1px solid var(--linha);
   border-radius: 50%;
   background: transparent;
-  color: var(--verde);
+  color: var(--camel-escuro);
 }
 
 .quantidade input {
@@ -508,7 +512,7 @@ button {
   margin-top: 8px;
   border: none !important;
   background: transparent !important;
-  color: var(--verde);
+  color: var(--camel-escuro);
   font-size: 12px;
   text-decoration: underline;
   border-radius: 0 !important;
@@ -532,10 +536,6 @@ button {
 .resumo-valores strong {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
-}
-
-.link-whatsapp {
-  gap: 8px;
 }
 
 .revisao-linha {
@@ -568,9 +568,10 @@ button {
   margin-top: 0;
 }
 
+/* PAGAMENTO */
 .texto-pagamento {
   margin-bottom: 22px;
-  color: var(--verde);
+  color: var(--camel-escuro);
 }
 
 .opcao-pagamento {
@@ -584,8 +585,8 @@ button {
 }
 
 .opcao-pagamento.ativa {
-  border-color: var(--verde);
-  background: rgba(86, 101, 20, 0.05);
+  border-color: var(--camel);
+  background: rgba(178, 150, 125, 0.12);
 }
 
 .opcao-pagamento div {
@@ -595,11 +596,11 @@ button {
 }
 
 .opcao-pagamento input {
-  accent-color: var(--verde);
+  accent-color: var(--camel);
 }
 
 .opcao-pagamento svg {
-  color: var(--verde);
+  color: var(--camel);
 }
 
 .pagamento-detalhes {
@@ -618,7 +619,7 @@ button {
   font-family: 'Cormorant Garamond', serif;
   font-size: 42px;
   font-weight: 400;
-  color: var(--verde);
+  color: var(--camel-escuro);
   margin: 18px 0 22px;
 }
 
@@ -629,7 +630,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 110px;
   text-align: left;
-  background: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.28);
 }
 
 .area-pix div {
@@ -639,7 +640,7 @@ button {
 .area-pix span {
   display: block;
   font-size: 12px;
-  color: var(--verde);
+  color: var(--camel-escuro);
   margin-bottom: 4px;
 }
 
@@ -650,9 +651,13 @@ button {
 
 .area-pix button {
   border: none;
-  background: var(--verde);
+  background: var(--camel);
   color: white;
   font-weight: 600;
+}
+
+.area-pix button:hover {
+  background: var(--camel-escuro);
 }
 
 .nome-pix-label {
@@ -682,7 +687,7 @@ button {
 .mercado-pago {
   margin-top: 18px;
   font-size: 13px;
-  color: var(--verde);
+  color: var(--camel-escuro);
   line-height: 1.6;
 }
 
@@ -691,9 +696,10 @@ footer {
   text-align: center;
   padding: 28px 20px;
   font-size: 12px;
-  color: var(--verde);
+  color: var(--camel-escuro);
 }
 
+/* RESPONSIVO */
 @media (max-width: 850px) {
   .grid-presentes {
     grid-template-columns: repeat(2, 1fr);
@@ -704,15 +710,11 @@ footer {
   }
 
   .hero {
-    min-height: auto;
+    min-height: 380px;
   }
 
   .hero-card {
-    height: 560px;
-  }
-
-  .hero-texto h1 {
-    font-size: 56px;
+    height: 360px;
   }
 }
 
@@ -726,20 +728,30 @@ footer {
     letter-spacing: 4px;
   }
 
+  .hero {
+    min-height: 360px;
+    padding: 16px 0;
+  }
+
   .hero-card {
     width: 86%;
-    height: 360px;
+    height: 350px;
   }
 
   .hero-texto {
-  bottom: 20px;
-  width: 86%;
-  padding: 9px 8px;
-}
+    bottom: 20px;
+    width: 86%;
+    padding: 9px 8px;
+  }
 
-.hero-texto h1 {
-  font-size: 28px;
-}
+  .hero-texto h1 {
+    font-size: 28px;
+  }
+
+  .hero-texto p {
+    font-size: 13px;
+    padding: 7px 18px;
+  }
 
   .contador {
     gap: 12px;

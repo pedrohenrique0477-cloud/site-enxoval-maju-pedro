@@ -5,7 +5,7 @@ const NOME_RECEBEDOR = "Pedro Henrique Casalli";
 
 const LINK_CARTAO_MERCADO_PAGO = "https://link.mercadopago.com.br/presentemajuepedro";
 
-const DATA_EVENTO = new Date("2026-10-10T00:00:00");
+const DATA_EVENTO = new Date("2026-09-13T12:00:00");
 
 let carrinho = JSON.parse(localStorage.getItem("carrinhoMajuPedro")) || [];
 let formaPagamento = "pix";
@@ -63,13 +63,13 @@ const categorias = [
     itens: [
       {
         id: 8,
-        nome: "Tapete de entrada pra te receber bem",
+        nome: "Tapete de entrada pra receber bem",
         preco: 48.90,
         imagem: "tapeteentrada.jpg"
       },
       {
         id: 9,
-        nome: "Porta-retrato pra foto do nosso enxoval",
+        nome: "Porta-retrato pra foto do nosso primeiro rolê",
         preco: 44.90,
         imagem: "portaretrato.jpg"
       },
@@ -99,7 +99,7 @@ const categorias = [
       },
       {
         id: 14,
-        nome: "Tela de janela para proteger nossas gatas",
+        nome: "Tela de janela pra proteger nosso cantinho",
         preco: 199.90,
         imagem: "telajanelassala.jpg"
       }
@@ -180,7 +180,7 @@ const categorias = [
     itens: [
       {
         id: 25,
-        nome: "Varal compacto pra vida de apartamento",
+        nome: "Varal de apartamento pra salvar os dias de lavanderia cheia",
         preco: 82.90,
         imagem: "varaldechao.jpg"
       },
