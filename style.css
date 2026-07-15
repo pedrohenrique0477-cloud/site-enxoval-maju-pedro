@@ -118,13 +118,12 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 34px 18px 26px;
+  padding: 26px 18px 18px;
 }
 
 .hero-card {
-  width: 390px;
-  max-width: 92vw;
-  min-height: 430px;
+  width: min(420px, 92vw);
+  height: 520px;
   position: relative;
   display: flex;
   align-items: center;
@@ -132,35 +131,64 @@ button {
   overflow: hidden;
 
   background: var(--camel);
-  border: 1px solid rgba(255, 250, 243, 0.35);
-  box-shadow: 0 14px 34px rgba(75, 55, 42, 0.22);
+  border-radius: 22px;
+  border: 1px solid rgba(255, 250, 243, 0.28);
+  box-shadow: 0 18px 42px rgba(75, 55, 42, 0.28);
+}
+
+/* Fundo infinito/desfocado da própria imagem */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: -26px;
+  background-image: url("./img/majuepedro.png");
+  background-size: cover;
+  background-position: center top;
+  filter: blur(18px);
+  opacity: 0.45;
+  transform: scale(1.08);
+  z-index: 0;
+}
+
+/* Camada suave por cima do fundo */
+.hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(178, 150, 125, 0.12),
+    rgba(178, 150, 125, 0.25)
+  );
+  z-index: 1;
 }
 
 .foto-casal {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  height: auto;
-  max-height: 520px;
+  height: 100%;
   object-fit: contain;
-  object-position: center center;
+  object-position: center top;
   display: block;
-  background: var(--camel);
 }
 
-/* plaquinha em cima da foto */
+/* Plaquinha em cima da foto */
 .hero-texto {
   position: absolute;
-  bottom: 22px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
 
-  width: 84%;
+  width: 82%;
   padding: 12px 12px 13px;
 
   background: rgba(242, 230, 220, 0.94);
   border: 1px solid rgba(111, 87, 71, 0.28);
   box-shadow: 0 7px 20px rgba(75, 55, 42, 0.20);
   backdrop-filter: blur(3px);
+  z-index: 4;
 }
 
 .hero-texto h1 {
@@ -188,6 +216,7 @@ button {
 
 .brilho {
   position: absolute;
+  z-index: 3;
   color: rgba(255, 250, 243, 0.88);
   text-shadow: 0 2px 10px rgba(75, 55, 42, 0.22);
   animation: piscar 2.2s infinite ease-in-out;
@@ -220,7 +249,7 @@ button {
 
 /* CONTADOR */
 .contador-area {
-  padding: 64px 20px 45px;
+  padding: 58px 20px 45px;
   text-align: center;
   background: var(--camel);
 }
@@ -732,7 +761,8 @@ footer {
   }
 
   .hero-card {
-    width: 370px;
+    width: min(390px, 92vw);
+    height: 500px;
   }
 }
 
@@ -747,35 +777,45 @@ footer {
   }
 
   .hero {
-    padding: 28px 14px 18px;
+    padding: 24px 14px 14px;
   }
 
   .hero-card {
     width: 92vw;
-    min-height: auto;
+    height: 460px;
+    border-radius: 20px;
+  }
+
+  .hero-card::before {
+    inset: -20px;
+    filter: blur(15px);
+    opacity: 0.46;
   }
 
   .foto-casal {
     width: 100%;
-    height: auto;
-    max-height: none;
+    height: 100%;
     object-fit: contain;
-    object-position: center center;
+    object-position: center top;
   }
 
   .hero-texto {
-    bottom: 18px;
+    bottom: 16px;
     width: 84%;
-    padding: 10px 8px;
+    padding: 9px 8px;
   }
 
   .hero-texto h1 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
   .hero-texto p {
-    font-size: 13px;
-    padding: 7px 18px;
+    font-size: 12px;
+    padding: 7px 16px;
+  }
+
+  .contador-area {
+    padding-top: 52px;
   }
 
   .contador {
