@@ -16,43 +16,43 @@ const categorias = [
     itens: [
       {
         id: 1,
-        nome: "Kit de utensílios pra estrear a cozinha",
+        nome: "Kit de utensílios para o chef de miojo evoluir",
         preco: 49.90,
         imagem: "kitutensilios.jpg"
       },
       {
         id: 2,
-        nome: "Kit de panos de prato que prometem não virar capacho",
+        nome: "Panos de prato que prometem não virar pano de chão",
         preco: 43.90,
         imagem: "kitpanosdeprato.jpg"
       },
       {
         id: 3,
-        nome: "Jogo de potes pra organizar a geladeira",
+        nome: "Potes para a geladeira fingir que é organizada",
         preco: 59.90,
         imagem: "jogopotes.jpg"
       },
       {
         id: 4,
-        nome: "Escorredor de pratos pra salvar a pia",
+        nome: "Escorredor para a louça parar de fazer acampamento na pia",
         preco: 67.90,
         imagem: "escorredorpratos.jpg"
       },
       {
         id: 5,
-        nome: "Jogo de copos pro café, suco e visitas",
+        nome: "Jogo de copos para receber visita sem usar copo de requeijão",
         preco: 74.90,
         imagem: "jogocopos.jpg"
       },
       {
         id: 6,
-        nome: "Panela de arroz pra facilitar a vida",
+        nome: "Panela de arroz para ninguém errar o ponto no primeiro almoço",
         preco: 119.90,
         imagem: "panelaarroz.jpg"
       },
       {
         id: 7,
-        nome: "Organizador de temperos pra cozinha ficar chique",
+        nome: "Organizador de temperos para a comida sair com personalidade",
         preco: 54.90,
         imagem: "organizadortemperos.jpg"
       }
@@ -63,43 +63,43 @@ const categorias = [
     itens: [
       {
         id: 8,
-        nome: "Tapete de entrada pra receber bem",
+        nome: "Tapete de entrada para a casa já chegar causando boa impressão",
         preco: 48.90,
         imagem: "tapeteentrada.jpg"
       },
       {
         id: 9,
-        nome: "Porta-retrato pra foto do nosso primeiro rolê",
+        nome: "Porta-retrato para provar que a gente já era bonito antes da casa",
         preco: 44.90,
         imagem: "portaretrato.jpg"
       },
       {
         id: 10,
-        nome: "Kit de almofadas fofinhas pra sala",
+        nome: "Almofadas fofinhas para a soneca render mais que a série",
         preco: 89.90,
         imagem: "almofadas.jpg"
       },
       {
         id: 11,
-        nome: "Manta para sofá e maratona de série",
+        nome: "Manta para o sofá ficar bonito igual foto de Pinterest",
         preco: 79.90,
         imagem: "mantasofa.jpg"
       },
       {
         id: 12,
-        nome: "Cortina pra sala ficar com cara de lar",
+        nome: "Cortina para a sala ficar elegante e os vizinhos saberem menos",
         preco: 129.90,
         imagem: "cortinasala.jpg"
       },
       {
         id: 13,
-        nome: "Luminária decorativa pra sala",
+        nome: "Luminária para deixar a sala bonita até quando a conta de luz vier",
         preco: 99.90,
         imagem: "luminariasala.jpg"
       },
       {
         id: 14,
-        nome: "Tela de janela pra proteger nosso cantinho",
+        nome: "Tela para as gatas não perderem nenhuma de suas 7 vidas",
         preco: 199.90,
         imagem: "telajanelassala.jpg"
       }
@@ -110,34 +110,40 @@ const categorias = [
     itens: [
       {
         id: 15,
-        nome: "Jogo de fronhas macias para bons sonhos",
+        nome: "Fronhas macias para acordar bonito, ou pelo menos tentar",
         preco: 52.90,
         imagem: "jogofronhas.jpg"
       },
       {
         id: 16,
-        nome: "Kit de cabides pra parar de dividir os do outro",
+        nome: "Cabides para cada um parar de roubar o do outro",
         preco: 46.90,
         imagem: "kitcabides.jpg"
       },
       {
         id: 17,
-        nome: "Difusor de aromas pro quarto ficar zen",
+        nome: "Difusor para o quarto ficar cheiroso igual casa de gente chique",
         preco: 56.90,
         imagem: "difusor.jpg"
       },
       {
         id: 18,
-        nome: "Abajur de cabeceira pra ler antes de dormir",
+        nome: "Abajur para ler antes de dormir e apagar depois de duas páginas",
         preco: 92.90,
         imagem: "abajur.jpg"
       },
       {
-        id: 19,
-        nome: "Ventilador para noites mais fresquinhas",
-        preco: 179.90,
-        imagem: "ventilador.jpg"
-      }
+  id: 19,
+  nome: "Ventilador para salvar as noites quentes e os cobertores briguentos",
+  preco: 179.90,
+  imagem: "ventilador.jpg"
+},
+{
+  id: 31,
+  nome: "Cobertor para ela dormir sempre coberta de razão",
+  preco: 139.90,
+  imagem: "cobertor.jpg"
+}
     ]
   },
   {
@@ -145,31 +151,31 @@ const categorias = [
     itens: [
       {
         id: 20,
-        nome: "Kit de toalhas para deixar o banheiro mais aconchegante",
+        nome: "Kit de toalhas para sair do banho parecendo gente fina",
         preco: 87.90,
         imagem: "kittoalhas.jpg"
       },
       {
         id: 21,
-        nome: "Tapete de banheiro antiderrapante",
+        nome: "Tapete antiderrapante para ninguém estrear a casa escorregando",
         preco: 57.90,
         imagem: "tapetebanheiro.jpg"
       },
       {
         id: 22,
-        nome: "Kit porta-sabonete e porta-escovas",
+        nome: "Kit de pia para organizar a escova, o sabonete e a vida",
         preco: 51.90,
         imagem: "kitbanheiro.jpg"
       },
       {
         id: 23,
-        nome: "Cesto pra roupa suja fingir organização",
+        nome: "Cesto de roupa suja para fingir que está tudo sob controle",
         preco: 72.90,
         imagem: "cestoroupa.jpg"
       },
       {
         id: 24,
-        nome: "Espelho para banheiro",
+        nome: "Espelho para conferir se o noivado está fazendo bem",
         preco: 124.90,
         imagem: "espelhobanheiro.jpg"
       }
@@ -180,37 +186,37 @@ const categorias = [
     itens: [
       {
         id: 25,
-        nome: "Varal de apartamento pra salvar os dias de lavanderia cheia",
+        nome: "Varal de apartamento para a roupa secar sem ocupar a casa toda",
         preco: 82.90,
         imagem: "varaldechao.jpg"
       },
       {
         id: 26,
-        nome: "Ferro de passar roupa pra deixar tudo alinhado",
+        nome: "Ferro de passar para a roupa sair alinhada igual boleto vencendo",
         preco: 104.90,
         imagem: "ferrodepassar.jpg"
       },
       {
         id: 27,
-        nome: "Mop prático pra casa ficar brilhando",
+        nome: "Mop para limpar a casa com cara de quem sabe o que está fazendo",
         preco: 69.90,
         imagem: "mop.jpg"
       },
       {
         id: 28,
-        nome: "Aspirador de pó pra faxina render mais",
+        nome: "Aspirador de pó para sumir com a sujeira e com a desculpa",
         preco: 209.90,
         imagem: "aspiradordepo.jpg"
       },
       {
         id: 29,
-        nome: "Organizador multiuso pra esconder a baguncinha",
+        nome: "Organizador multiuso para esconder a baguncinha com elegância",
         preco: 94.90,
         imagem: "organizadormultiuso.jpg"
       },
       {
         id: 30,
-        nome: "Ajuda para comprar a lava e seca",
+        nome: "Ajuda para a lava e seca para a gente não ter que usar o seu",
         preco: 249.90,
         imagem: "lavaseca.jpg"
       }
