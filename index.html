@@ -245,38 +245,48 @@
 
             <strong class="valor-final" id="valorPagamento">R$ 0,00</strong>
 
-            <div id="areaPix" class="area-pix">
-              <div>
-                <span>Chave Pix</span>
-                <strong id="chavePix">16994507580</strong>
+            <div id="areaPix" class="area-pix-nova">
+  <div class="qr-pix-box">
+    <img src="./img/qrcodepix.png" alt="QR Code Pix" class="qr-pix">
+  </div>
 
-                <span class="nome-pix-label">Nome</span>
-                <strong id="nomeRecebedor">Pedro Henrique Casalli</strong>
-              </div>
+  <p class="pix-aviso">
+    Escaneie o QR Code acima ou copie a chave Pix abaixo.
+  </p>
 
-              <button onclick="copiarPix()">Copiar</button>
-            </div>
+  <div class="pix-dados">
+    <div>
+      <span>Chave Pix</span>
+      <strong id="chavePix">16994507580</strong>
 
-            <div id="areaCartao" class="area-link-pagamento escondido">
-              <p>
-                Você será direcionado para o Mercado Pago.
-                Digite lá o mesmo valor total mostrado aqui.
-              </p>
+      <span class="nome-pix-label">Nome</span>
+      <strong id="nomeRecebedor">Pedro Henrique Casalli</strong>
+    </div>
 
-              <a 
-                id="linkCartao" 
-                href="https://link.mercadopago.com.br/presentemajuepedro" 
-                target="_blank" 
-                class="botao-mini"
-                onclick="abrirMercadoPago(event)"
-              >
-                Pagar com cartão pelo Mercado Pago
-              </a>
-            </div>
+    <button onclick="copiarPix()">Copiar</button>
+  </div>
+</div>
 
-            <p class="mercado-pago">
-              No cartão, informe no Mercado Pago o valor exato que aparece aqui.
-            </p>
+<div id="areaCartao" class="area-link-pagamento escondido">
+  <p>
+    Você será direcionado para o Mercado Pago.
+    Digite lá o mesmo valor total mostrado aqui.
+  </p>
+
+  <a 
+    id="linkCartao" 
+    href="https://link.mercadopago.com.br/presentemajuepedro" 
+    target="_blank" 
+    class="botao-mini"
+    onclick="abrirMercadoPago(event)"
+  >
+    Pagar com cartão pelo Mercado Pago
+  </a>
+
+  <p class="mercado-pago">
+    No cartão, informe no Mercado Pago o valor exato que aparece aqui.
+  </p>
+</div>
 
           </div>
 
