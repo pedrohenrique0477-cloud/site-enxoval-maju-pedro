@@ -10,217 +10,222 @@ const DATA_EVENTO = new Date("2026-09-13T12:00:00");
 let carrinho = JSON.parse(localStorage.getItem("carrinhoMajuPedro")) || [];
 let formaPagamento = "pix";
 
-const categorias = [
+const presentes = [
   {
-    nome: "Cozinha",
-    itens: [
-      {
-        id: 1,
-        nome: "Kit de utensílios para o chef de miojo evoluir",
-        preco: 49.90,
-        imagem: "kitutensilios.jpg"
-      },
-      {
-        id: 2,
-        nome: "Panos de prato que prometem não virar pano de chão",
-        preco: 43.90,
-        imagem: "kitpanosdeprato.jpg"
-      },
-      {
-        id: 3,
-        nome: "Potes para a geladeira fingir que é organizada",
-        preco: 59.90,
-        imagem: "jogopotes.jpg"
-      },
-      {
-        id: 4,
-        nome: "Escorredor para a louça parar de fazer acampamento na pia",
-        preco: 67.90,
-        imagem: "escorredorpratos.jpg"
-      },
-      {
-        id: 5,
-        nome: "Jogo de copos para receber visita sem usar copo de requeijão",
-        preco: 74.90,
-        imagem: "jogocopos.jpg"
-      },
-      {
-        id: 6,
-        nome: "Panela de arroz para ninguém errar o ponto no primeiro almoço",
-        preco: 119.90,
-        imagem: "panelaarroz.jpg"
-      },
-      {
-        id: 7,
-        nome: "Organizador de temperos para a comida sair com personalidade",
-        preco: 54.90,
-        imagem: "organizadortemperos.jpg"
-      }
-    ]
+    id: 1,
+    nome: "Panos de prato que prometem não virar pano de chão",
+    preco: 43.90,
+    imagem: "kitpanosdeprato.jpg"
   },
   {
-    nome: "Sala",
-    itens: [
-      {
-        id: 8,
-        nome: "Tapete de entrada para a casa já chegar causando boa impressão",
-        preco: 48.90,
-        imagem: "tapeteentrada.jpg"
-      },
-      {
-        id: 9,
-        nome: "Porta-retrato para provar que a gente já era bonito antes da casa",
-        preco: 44.90,
-        imagem: "portaretrato.jpg"
-      },
-      {
-        id: 10,
-        nome: "Almofadas fofinhas para a soneca render mais que a série",
-        preco: 89.90,
-        imagem: "almofadas.jpg"
-      },
-      {
-        id: 11,
-        nome: "Manta para o sofá ficar bonito igual foto de Pinterest",
-        preco: 79.90,
-        imagem: "mantasofa.jpg"
-      },
-      {
-        id: 12,
-        nome: "Cortina para a sala ficar elegante e os vizinhos saberem menos",
-        preco: 129.90,
-        imagem: "cortinasala.jpg"
-      },
-      {
-        id: 13,
-        nome: "Luminária para deixar a sala bonita até quando a conta de luz vier",
-        preco: 99.90,
-        imagem: "luminariasala.jpg"
-      },
-      {
-        id: 14,
-        nome: "Tela para as gatas não perderem nenhuma de suas 7 vidas",
-        preco: 199.90,
-        imagem: "telajanelassala.jpg"
-      }
-    ]
+    id: 2,
+    nome: "Porta-retrato para provar que a gente já era bonito antes da casa",
+    preco: 44.90,
+    imagem: "portaretrato.jpg"
   },
   {
-    nome: "Quarto",
-    itens: [
-      {
-        id: 15,
-        nome: "Fronhas macias para acordar bonito, ou pelo menos tentar",
-        preco: 52.90,
-        imagem: "jogofronhas.jpg"
-      },
-      {
-        id: 16,
-        nome: "Cabides para cada um parar de roubar o do outro",
-        preco: 46.90,
-        imagem: "kitcabides.jpg"
-      },
-      {
-        id: 17,
-        nome: "Difusor para o quarto ficar cheiroso igual casa de gente chique",
-        preco: 56.90,
-        imagem: "difusor.jpg"
-      },
-      {
-        id: 18,
-        nome: "Abajur para ler antes de dormir e apagar depois de duas páginas",
-        preco: 92.90,
-        imagem: "abajur.jpg"
-      },
-      {
-  id: 19,
-  nome: "Ventilador para salvar as noites quentes e os cobertores briguentos",
-  preco: 179.90,
-  imagem: "ventilador.jpg"
-},
-{
-  id: 31,
-  nome: "Cobertor para ela dormir sempre coberta de razão",
-  preco: 139.90,
-  imagem: "cobertor.jpg"
-}
-    ]
+    id: 3,
+    nome: "Cabides para cada um parar de roubar o do outro",
+    preco: 46.90,
+    imagem: "kitcabides.jpg"
   },
   {
-    nome: "Banheiro",
-    itens: [
-      {
-        id: 20,
-        nome: "Kit de toalhas para sair do banho parecendo gente fina",
-        preco: 87.90,
-        imagem: "kittoalhas.jpg"
-      },
-      {
-        id: 21,
-        nome: "Tapete antiderrapante para ninguém estrear a casa escorregando",
-        preco: 57.90,
-        imagem: "tapetebanheiro.jpg"
-      },
-      {
-        id: 22,
-        nome: "Kit de pia para organizar a escova, o sabonete e a vida",
-        preco: 51.90,
-        imagem: "kitbanheiro.jpg"
-      },
-      {
-        id: 23,
-        nome: "Cesto de roupa suja para fingir que está tudo sob controle",
-        preco: 72.90,
-        imagem: "cestoroupa.jpg"
-      },
-      {
-        id: 24,
-        nome: "Espelho para conferir se o noivado está fazendo bem",
-        preco: 124.90,
-        imagem: "espelhobanheiro.jpg"
-      }
-    ]
+    id: 4,
+    nome: "Tapete de entrada para a casa já chegar causando boa impressão",
+    preco: 48.90,
+    imagem: "tapeteentrada.jpg"
   },
   {
-    nome: "Área de serviço",
-    itens: [
-      {
-        id: 25,
-        nome: "Varal de apartamento para a roupa secar sem ocupar a casa toda",
-        preco: 82.90,
-        imagem: "varaldechao.jpg"
-      },
-      {
-        id: 26,
-        nome: "Ferro de passar para a roupa sair alinhada igual boleto vencendo",
-        preco: 104.90,
-        imagem: "ferrodepassar.jpg"
-      },
-      {
-        id: 27,
-        nome: "Mop para limpar a casa com cara de quem sabe o que está fazendo",
-        preco: 69.90,
-        imagem: "mop.jpg"
-      },
-      {
-        id: 28,
-        nome: "Aspirador de pó para sumir com a sujeira e com a desculpa",
-        preco: 209.90,
-        imagem: "aspiradordepo.jpg"
-      },
-      {
-        id: 29,
-        nome: "Organizador multiuso para esconder a baguncinha com elegância",
-        preco: 94.90,
-        imagem: "organizadormultiuso.jpg"
-      },
-      {
-        id: 30,
-        nome: "Ajuda para a lava e seca para a gente não ter que usar o seu",
-        preco: 249.90,
-        imagem: "lavaseca.jpg"
-      }
-    ]
+    id: 5,
+    nome: "Kit de utensílios para o chef de miojo evoluir",
+    preco: 49.90,
+    imagem: "kitutensilios.jpg"
+  },
+  {
+    id: 6,
+    nome: "Kit de pia para o sabonete e a escova terem endereço fixo",
+    preco: 51.90,
+    imagem: "kitbanheiro.jpg"
+  },
+  {
+    id: 7,
+    nome: "Fronhas macias para acordar bonito, ou pelo menos tentar",
+    preco: 52.90,
+    imagem: "jogofronhas.jpg"
+  },
+  {
+    id: 8,
+    nome: "Organizador de temperos para a comida sair com personalidade",
+    preco: 54.90,
+    imagem: "organizadortemperos.jpg"
+  },
+  {
+    id: 9,
+    nome: "Difusor para o quarto ficar cheiroso igual casa de gente chique",
+    preco: 56.90,
+    imagem: "difusor.jpg"
+  },
+  {
+    id: 10,
+    nome: "Tapete antiderrapante para ninguém estrear a casa escorregando",
+    preco: 57.90,
+    imagem: "tapetebanheiro.jpg"
+  },
+  {
+    id: 11,
+    nome: "Potes para a geladeira fingir que é organizada",
+    preco: 59.90,
+    imagem: "jogopotes.jpg"
+  },
+  {
+    id: 12,
+    nome: "Escorredor para a louça parar de fazer acampamento na pia",
+    preco: 67.90,
+    imagem: "escorredorpratos.jpg"
+  },
+  {
+    id: 13,
+    nome: "Mop para limpar a casa com cara de quem sabe o que está fazendo",
+    preco: 69.90,
+    imagem: "mop.jpg"
+  },
+  {
+    id: 14,
+    nome: "Cesto de roupa suja para fingir que está tudo sob controle",
+    preco: 72.90,
+    imagem: "cestoroupa.jpg"
+  },
+  {
+    id: 15,
+    nome: "Jogo de copos para receber visita sem usar copo de requeijão",
+    preco: 74.90,
+    imagem: "jogocopos.jpg"
+  },
+  {
+    id: 16,
+    nome: "Manta para o sofá ficar bonito igual foto de Pinterest",
+    preco: 79.90,
+    imagem: "mantasofa.jpg"
+  },
+  {
+    id: 17,
+    nome: "Varal de apartamento para a roupa secar sem ocupar a casa toda",
+    preco: 82.90,
+    imagem: "varaldechao.jpg"
+  },
+  {
+    id: 18,
+    nome: "Kit de toalhas para sair do banho parecendo gente fina",
+    preco: 87.90,
+    imagem: "kittoalhas.jpg"
+  },
+  {
+    id: 19,
+    nome: "Almofadas fofinhas para a soneca render mais que a série",
+    preco: 89.90,
+    imagem: "almofadas.jpg"
+  },
+  {
+    id: 20,
+    nome: "Abajur para ler antes de dormir e apagar depois de duas páginas",
+    preco: 92.90,
+    imagem: "abajur.jpg"
+  },
+  {
+    id: 21,
+    nome: "Organizador multiuso para esconder a baguncinha com elegância",
+    preco: 94.90,
+    imagem: "organizadormultiuso.jpg"
+  },
+  {
+    id: 22,
+    nome: "Luminária para deixar a sala bonita até quando a conta de luz vier",
+    preco: 99.90,
+    imagem: "luminariasala.jpg"
+  },
+  {
+    id: 23,
+    nome: "Ferro de passar para a roupa sair alinhada igual boleto vencendo",
+    preco: 104.90,
+    imagem: "ferrodepassar.jpg"
+  },
+  {
+    id: 24,
+    nome: "Panela de arroz para ninguém errar o ponto no primeiro almoço",
+    preco: 119.90,
+    imagem: "panelaarroz.jpg"
+  },
+  {
+    id: 25,
+    nome: "Espelho para conferir se a vida de casa nova está fazendo bem",
+    preco: 124.90,
+    imagem: "espelhobanheiro.jpg"
+  },
+  {
+    id: 26,
+    nome: "Cortina para a sala ficar elegante e os vizinhos saberem menos",
+    preco: 129.90,
+    imagem: "cortinasala.jpg"
+  },
+  {
+    id: 27,
+    nome: "Cobertor para a noiva dormir sempre coberta de razão",
+    preco: 139.90,
+    imagem: "cobertor.jpg"
+  },
+  {
+    id: 28,
+    nome: "Ventilador para salvar as noites quentes e os cobertores briguentos",
+    preco: 179.90,
+    imagem: "ventilador.jpg"
+  },
+  {
+    id: 29,
+    nome: "Tela para as gatas não perderem nenhuma de suas vidas",
+    preco: 199.90,
+    imagem: "telajanelassala.jpg"
+  },
+  {
+    id: 30,
+    nome: "Aspirador de pó para sumir com a sujeira e com a desculpa",
+    preco: 209.90,
+    imagem: "aspiradordepo.jpg"
+  },
+  {
+    id: 31,
+    nome: "Ajuda para a lava e seca realizar o sonho de não estender roupa",
+    preco: 249.90,
+    imagem: "lavaseca.jpg"
+  },
+  {
+    id: 32,
+    nome: "Kit ferramentas para fingirmos que sabemos resolver tudo sozinhos",
+    preco: 319.90,
+    imagem: "kitferramentas.jpg"
+  },
+  {
+    id: 33,
+    nome: "Ajuda na mudança para as caixas chegarem antes da nossa paciência acabar",
+    preco: 349.90,
+    imagem: "ajudamudanca.jpg"
+  },
+  {
+    id: 34,
+    nome: "Ajuda na primeira compra do mercado porque o carrinho não se enche sozinho",
+    preco: 499.90,
+    imagem: "primeiracompra.jpg"
+  },
+  {
+    id: 35,
+    nome: "Ajuda nos móveis da casa para a gente parar de sentar em caixa",
+    preco: 699.90,
+    imagem: "ajudamoveis.jpg"
+  },
+  {
+    id: 36,
+    nome: "Ajuda na entrada do nosso apartamento, porque adulto sofre mas decora",
+    preco: 1199.90,
+    imagem: "entradaapartamento.jpg"
   }
 ];
 
@@ -294,34 +299,28 @@ function carregarPresentes() {
 
   lista.innerHTML = "";
 
-  categorias.forEach(categoria => {
-    const section = document.createElement("section");
-    section.className = "categoria";
+  const section = document.createElement("section");
+  section.className = "categoria categoria-unica";
 
-    const titulo = document.createElement("h3");
-    titulo.textContent = categoria.nome;
+  const grid = document.createElement("div");
+  grid.className = "grid-presentes";
 
-    const grid = document.createElement("div");
-    grid.className = "grid-presentes";
+  presentes.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card-presente";
 
-    categoria.itens.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card-presente";
+    card.innerHTML = `
+      <img src="./img/${item.imagem}" alt="${item.nome}">
+      <h4>${item.nome}</h4>
+      <p class="preco">${formatarMoeda(item.preco)}</p>
+      <button onclick="comprarItem(${item.id})">Comprar</button>
+    `;
 
-      card.innerHTML = `
-        <img src="./img/${item.imagem}" alt="${item.nome}">
-        <h4>${item.nome}</h4>
-        <p class="preco">${formatarMoeda(item.preco)}</p>
-        <button onclick="comprarItem(${item.id})">Comprar</button>
-      `;
-
-      grid.appendChild(card);
-    });
-
-    section.appendChild(titulo);
-    section.appendChild(grid);
-    lista.appendChild(section);
+    grid.appendChild(card);
   });
+
+  section.appendChild(grid);
+  lista.appendChild(section);
 }
 
 function comprarItem(id) {
@@ -346,15 +345,7 @@ function comprarItem(id) {
 }
 
 function buscarItem(id) {
-  for (const categoria of categorias) {
-    const encontrado = categoria.itens.find(item => item.id === id);
-
-    if (encontrado) {
-      return encontrado;
-    }
-  }
-
-  return null;
+  return presentes.find(item => item.id === id) || null;
 }
 
 function renderizarCarrinho() {
