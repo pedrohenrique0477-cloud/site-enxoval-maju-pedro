@@ -12,16 +12,16 @@ let formaPagamento = "pix";
 
 const presentes = [
   {
-    id: 1,
-    nome: "Ajuda na primeira compra do mercado porque o carrinho não se enche sozinho",
-    preco: 499.90,
-    imagem: "primeiracompra.jpg"
-  },
-  {
     id: 2,
     nome: "Panos de prato que prometem não virar pano de chão",
     preco: 43.90,
     imagem: "kitpanosdeprato.jpg"
+  },
+  {
+    id: 1,
+    nome: "Ajuda na primeira compra do mercado porque o carrinho não se enche sozinho",
+    preco: 499.90,
+    imagem: "primeiracompra.jpg"
   },
   {
     id: 3,
